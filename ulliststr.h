@@ -6,7 +6,7 @@
 class ULListStr {
  public:
   struct Item {
-    std::string val[ARRSIZE];
+    std::string val[ARRSIZE]; //Stores Strings
     /**
      * first and last indicate the occupied/used 
      * elements of the array where first is an
@@ -16,9 +16,9 @@ class ULListStr {
      * first=0, last=ARRSIZE indicates the array
      * is fully occupied
      */
-    size_t first, last;
-    Item *prev;
-    Item *next;
+    size_t first, last; //Positions
+    Item *prev; //Previous Item
+    Item *next; //Next Item
 
     /**
      * Default constructor
@@ -113,6 +113,9 @@ class ULListStr {
    */
   void clear();
 
+  //Custom Memer Functions
+  bool headEqualsTails() const;
+
  private:
   /** 
    * Returns a pointer to the item at index, loc,
@@ -128,9 +131,9 @@ class ULListStr {
    *  You MUST keep these members though you
    *  may add more if desired.
    */
-  Item* head_;
-  Item* tail_;
-  size_t size_;
+  Item* head_; //start of the list
+  Item* tail_; //end of the list
+  size_t size_; //number of items in list
 };
 
 #endif
